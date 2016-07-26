@@ -1,0 +1,23 @@
+
+{
+    "name": "eliasrosa/bw-com-automoveis",
+    "description": "Componete de controle de automóveis para BW for Laravel",
+    "keywords": ["bw", "laravel","automóveis"  "back-end", "eliasrosa"],
+    "homepage": "https://github.com/eliasrosa/bw-com-automoveis",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Elias da Rosa",
+            "email": "elias@eliasdarosa.com.br",
+            "homepage": "http://www.eliasdarosa.com.br/"
+        }
+    ],
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Automoveis\\": "src/"
+        }
+    }
+}
+
