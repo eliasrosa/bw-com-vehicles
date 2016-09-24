@@ -2,7 +2,6 @@
 
 namespace Automoveis\Providers;
 
-use MagicRelationship;
 use Illuminate\Routing\Router;
 use BW\Router\Router as BwRouter;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -27,7 +26,7 @@ class AutomoveisServiceProvider extends ServiceProvider
         \View::addNamespace('Automoveis', __DIR__ . '/../../views');
 
         //
-        \Magic\MagicRelationship::register('automoveis.magic-relationship');
+        \MagicRelationships::register('automoveis.magic-relationship');
     }
 
     public function map(Router $router)
