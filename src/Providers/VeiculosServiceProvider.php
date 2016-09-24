@@ -1,13 +1,13 @@
 <?php
 
-namespace Automoveis\Providers;
+namespace Veiculos\Providers;
 
 use Illuminate\Routing\Router;
 use BW\Router\Router as BwRouter;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
 
-class AutomoveisServiceProvider extends ServiceProvider
+class VeiculosServiceProvider extends ServiceProvider
 {
 
     public function boot(Router $router)
@@ -23,7 +23,7 @@ class AutomoveisServiceProvider extends ServiceProvider
 
     public function register()
     {
-        \View::addNamespace('Automoveis', __DIR__ . '/../../views');
+        \View::addNamespace('BW\Veiculos', __DIR__ . '/../../views');
 
         //
         \MagicRelationships::register('automoveis.magic-relationship');

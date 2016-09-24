@@ -1,6 +1,6 @@
 <?php
 
-namespace Automoveis\Models;
+namespace Veiculos\Models;
 
 use Magic\Traits\MagicRelationship;
 use Illuminate\Database\Eloquent\Model;

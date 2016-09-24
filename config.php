@@ -5,7 +5,7 @@ return [
     //
     'magic-relationship' => [
 
-        'Automoveis\Models\Veiculo' => [
+        'Veiculos\Models\Veiculo' => [
             'imagem' => ['type' => 'Image'],
             'galeria' => ['type' => 'ImageGroup'],
             'marcadores' => ['type' => 'Tag'],

@@ -5,4 +5,4 @@ $except = [
 ];
 
 //
-Route::resource('automoveis/veiculos', '\Automoveis\Controllers\VeiculosController', $except);
+Route::resource('veiculos', '\Veiculos\Controllers\VeiculosController', $except);
