@@ -16,8 +16,7 @@ class VeiculosServiceProvider extends ServiceProvider
         parent::boot($router);
 
         //
-        $this->publishes([__DIR__ . '/../../config.php' => config_path('/automoveis.php')], 'config');
-        $this->publishes([__DIR__ . '/../../public' => public_path('packages/eliasrosa/bw-com-automoveis')], 'public');
+        $this->publishes([__DIR__ . '/../../config.php' => config_path('/veiculos.php')], 'config');
         $this->publishes([__DIR__ . '/../../database/migrations' => database_path('migrations')], 'migrations');
     }
 
@@ -26,7 +25,7 @@ class VeiculosServiceProvider extends ServiceProvider
         \View::addNamespace('BW\Veiculos', __DIR__ . '/../../views');
 
         //
-        \MagicRelationships::register('automoveis.magic-relationship');
+        \MagicRelationships::register('veiculos.magic-relationship');
     }
 
     public function map(Router $router)
