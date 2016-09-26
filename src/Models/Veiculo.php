@@ -11,7 +11,7 @@ class Veiculo extends Model
     use MagicRelationship;
 
     //
-    protected $table = 'auto_veiculos';
+    protected $table = 'veiculos';
 
     //
     protected $fillable = array('nome', 'status');

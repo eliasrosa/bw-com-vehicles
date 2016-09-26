@@ -12,7 +12,7 @@ class CreateVeiculosTable extends Migration
      */
     public function up()
     {
-        Schema::create('auto_veiculos', function (Blueprint $table) {
+        Schema::create('veiculos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->boolean('status');
@@ -27,6 +27,6 @@ class CreateVeiculosTable extends Migration
      */
     public function down()
     {
-        Schema::drop('auto_veiculos');
+        Schema::drop('veiculos');
     }
 }
