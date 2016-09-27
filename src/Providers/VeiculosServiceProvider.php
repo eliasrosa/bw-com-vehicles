@@ -25,7 +25,7 @@ class VeiculosServiceProvider extends ServiceProvider
         \View::addNamespace('BW\Veiculos', __DIR__ . '/../../views');
 
         //
-        \MagicRelationships::register('veiculos.magic-relationship');
+        \BWAdmin::registerRelationships('veiculos.magic-relationship');
 
         //
         \BWAdmin::registerMenu('veiculos.menu');

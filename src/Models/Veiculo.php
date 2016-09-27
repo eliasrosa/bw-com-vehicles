@@ -2,13 +2,13 @@
 
 namespace Veiculos\Models;
 
-use Magic\Traits\MagicRelationship;
+use BW\Util\Relationships\Traits\RelationshipTrait;
 use Illuminate\Database\Eloquent\Model;
 
 class Veiculo extends Model
 {
     // Trait
-    use MagicRelationship;
+    use RelationshipTrait;
 
     //
     protected $table = 'veiculos';
