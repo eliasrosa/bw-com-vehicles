@@ -26,6 +26,9 @@ class VeiculosServiceProvider extends ServiceProvider
 
         //
         \MagicRelationships::register('veiculos.magic-relationship');
+
+        //
+        \BWAdmin::registerMenu('veiculos.menu');
     }
 
     public function map(Router $router)

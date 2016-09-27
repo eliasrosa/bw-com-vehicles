@@ -15,5 +15,15 @@ return [
                 'imagem' => ['type' => 'Image'],
             ]],
         ],
+    ],
+
+    //
+    'menu' => [
+        [
+            'label' => 'Gerenciar veículos',
+            'icon' => 'fa fa-car',
+            'route-index' => 'bw.veiculos.index',
+            'route' => 'bw.veiculos.index',
+        ],
     ]
 ];
