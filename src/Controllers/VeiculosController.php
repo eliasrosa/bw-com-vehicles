@@ -11,7 +11,7 @@ class VeiculosController extends BaseController
 
     //
     public function index(){
-
+        return view('BW\Veiculos::index');
     }
 
     //
