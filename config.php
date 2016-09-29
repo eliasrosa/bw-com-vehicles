@@ -5,15 +5,15 @@ return [
     //
     'magic-relationship' => [
 
-        'Veiculos\Models\Veiculo' => [
-            'imagem' => ['type' => 'Image'],
-            'galeria' => ['type' => 'ImageGroup'],
-            'marcadores' => ['type' => 'Tag'],
-
-            //
-            'categoria' => [ 'type' => 'Listing', 'relationships' => [
-                'imagem' => ['type' => 'Image'],
-            ]],
+        //
+        'Vehicles\Models\Vehicle' => [
+            'image'   => [ 'type' => 'Image'     ],
+            'galery'  => [ 'type' => 'ImageGroup'],
+            'brand'   => [ 'type' => 'Listing'   ],
+            'color'   => [ 'type' => 'Listing'   ],
+            'fuel'    => [ 'type' => 'Listing'   ],
+            'status'  => [ 'type' => 'Listing'   ],
+            'options' => [ 'type' => 'Tag'       ],
         ],
     ],
 
@@ -22,8 +22,8 @@ return [
         [
             'label' => 'Gerenciar veículos',
             'icon' => 'fa fa-car',
-            'route-index' => 'bw.veiculos.index',
-            'route' => 'bw.veiculos.index',
+            'route-index' => 'bw.vehicles.index',
+            'route' => 'bw.vehicles.index',
         ],
     ]
 ];

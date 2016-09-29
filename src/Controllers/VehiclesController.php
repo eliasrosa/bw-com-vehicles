@@ -1,17 +1,17 @@
 <?php
 
-namespace Veiculos\Controllers;
+namespace Vehicles\Controllers;
 
 use Illuminate\Http\Request;
 use BW\Controllers\BaseController;
-use Veiculos\Models\Veiculo;
+use Vehicles\Models\Veiculo;
 
-class VeiculosController extends BaseController
+class VehiclesController extends BaseController
 {
 
     //
     public function index(){
-        return view('BW\Veiculos::index');
+        return view('BW\Vehicles::index');
     }
 
     //

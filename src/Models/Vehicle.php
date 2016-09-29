@@ -1,18 +1,18 @@
 <?php
 
-namespace Veiculos\Models;
+namespace Vehicles\Models;
 
 use BW\Util\Relationships\Traits\RelationshipTrait;
 use Illuminate\Database\Eloquent\Model;
 
-class Veiculo extends Model
+class Vehicle extends Model
 {
     // Trait
     use RelationshipTrait;
 
     //
-    protected $table = 'veiculos';
+    protected $table = 'vehicles';
 
     //
-    protected $fillable = array('nome', 'status');
+    protected $fillable = [];
 }
