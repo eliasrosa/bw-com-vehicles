@@ -15,11 +15,11 @@ class CreateVehiclesTable extends Migration
         Schema::create('vehicles', function (Blueprint $table) {
             $table->increments('id');
             $table->string('model');
-            $table->integer('year', 4);
-            $table->integer('ports', 1);
-            $table->string('price', 10, 2);
+            $table->integer('year');
+            $table->integer('doors');
+            $table->decimal('price', 15, 2);
             $table->string('motor');
-            $table->string('board', 8);
+            $table->string('license_plate', 8)->unique();
             $table->integer('km');
             $table->longtext('comments');
             $table->timestamps();

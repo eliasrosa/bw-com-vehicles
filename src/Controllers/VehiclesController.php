@@ -4,39 +4,134 @@ namespace Vehicles\Controllers;
 
 use Illuminate\Http\Request;
 use BW\Controllers\BaseController;
-use Vehicles\Models\Veiculo;
+use Vehicles\Models\Vehicle;
+use Vehicles\Views\VehicleForm;
 
 class VehiclesController extends BaseController
 {
-
     //
     public function index(){
-        return view('BW\Vehicles::index');
+
+        $vehicles = Vehicle::all();
+
+        return view('BW\Vehicles::index')->with([
+            'vehicles' => $vehicles
+        ]);
     }
 
     //
     public function create()
     {
+        //
+        $form = new VehicleForm();
+
+        //
+        return $this->view('BW\Vehicles::create')
+            ->with(compact('form'));
     }
 
     //
     public function store(Request $request)
     {
+
+        $validator = \Validator::make($request->all(), [
+            'model'         => 'required',
+            'motor'         => 'required',
+            'year'          => 'required',
+            'doors'         => 'required',
+            'price'         => 'required',
+            'license_plate' => 'required',
+            'km'            => 'required',
+        ]);
+
+        //
+        if ($validator->fails()) {
+
+            $this->flash()->error('Alguns campos não foram preenchidos corretamente');
+
+            return back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        //
+        $u = new Vehicle();
+        $u->km = $request->get('km');
+        $u->model = $request->get('model');
+        $u->motor = $request->get('motor');
+        $u->year = $request->get('year');
+        $u->doors = $request->get('doors');
+        $u->price = $request->get('price');
+        $u->license_plate = $request->get('license_plate');
+        $u->comments = $request->get('comments');
+        $u->save();
+
+        //
+        $this->flash()->success('Veículo adicionado com sucesso!');
+        return redirect()->route('bw.vehicles.index');
     }
 
     //
     public function edit($id)
     {
+        //
+        $form = new VehicleForm($id);
+
+        //
+        return $this->view('BW\Vehicles::create')
+            ->with(compact('form'));
     }
 
     //
     public function update(Request $request)
     {
+        $validator = \Validator::make($request->all(), [
+            'model'         => 'required',
+            'motor'         => 'required',
+            'year'          => 'required',
+            'doors'         => 'required',
+            'price'         => 'required',
+            'km'            => 'required',
+            'license_plate' => 'required',
+        ]);
+
+        //
+        if ($validator->fails()) {
+
+            $this->flash()->error('Alguns campos não foram preenchidos corretamente');
+
+            return back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        //
+        $u = Vehicle::find($request->get('id'));
+        $u->km = $request->get('km');
+        $u->model = $request->get('model');
+        $u->motor = $request->get('motor');
+        $u->year = $request->get('year');
+        $u->doors = $request->get('doors');
+        $u->price = $request->get('price');
+        $u->license_plate = $request->get('license_plate');
+        $u->comments = $request->get('comments');
+        $u->save();
+
+        //
+        $this->flash()->success('Veículo atualizado com sucesso!');
+        return redirect()->route('bw.vehicles.index');
     }
 
     //
     public function destroy($id)
     {
+        // delete
+        $u = Vehicle::find($id);
+        $u->delete();
+
+        // redirect
+        $this->flash()->success('Veículo removido com sucesso!');
+        return redirect()->route('bw.vehicles.index');
     }
 
 }
