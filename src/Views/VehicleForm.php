@@ -18,26 +18,28 @@ class VehicleForm extends Form
 
         //
         $this->createForm();
+
+        //
+        $this->createPanelsRelationships(Vehicle::getModel());
     }
 
     private function createForm()
     {
         $this->addPanel('Dados do veículo', function($panel){
             $panel->addText('model', 'Modelo');
-            $panel->addText('motor', 'Motor');
-            $panel->addLicensePlate('license_plate', 'Placa');
-            $panel->addCurrency('price', 'Preço');
+            $panel->addText('motor', 'Motor')
+                  ->setWidth(6);
+
+            $panel->addInteger('km', 'KM');
             $panel->addInteger('year', 'Ano');
             $panel->addInteger('doors', 'Número de portas');
-            $panel->addInteger('km', 'KM');
-        });
+            $panel->addLicensePlate('license_plate', 'Placa');
+            $panel->addCurrency('price', 'Preço');
 
-        $this->addPanel('Comentário', function($panel){
-            $panel->addTextArea('comments', 'Comentário')
+            //
+            $panel->addTextArea('comments', 'Informações adicionais')
                   ->addAttribute('style', 'height: 118px;');
         });
-
-        return $this;
     }
 }
 
