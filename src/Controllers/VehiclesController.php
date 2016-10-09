@@ -2,10 +2,11 @@
 
 namespace Vehicles\Controllers;
 
-use Illuminate\Http\Request;
-use BW\Controllers\BaseController;
 use Vehicles\Models\Vehicle;
+use Illuminate\Http\Request;
 use Vehicles\Views\VehicleForm;
+use BW\Util\Validation\Validator;
+use BW\Controllers\BaseController;
 
 class VehiclesController extends BaseController
 {
@@ -33,8 +34,8 @@ class VehiclesController extends BaseController
     //
     public function store(Request $request)
     {
-
-        $validator = \Validator::make($request->all(), [
+        //
+        $validator = Validator::make(Vehicle::class, VehicleForm::class, $request->all(), [
             'model'         => 'required',
             'motor'         => 'required',
             'year'          => 'required',
@@ -67,6 +68,9 @@ class VehiclesController extends BaseController
         $u->save();
 
         //
+        $u->saveRelationships();
+
+        //
         $this->flash()->success('Veículo adicionado com sucesso!');
         return redirect()->route('bw.vehicles.index');
     }
@@ -85,7 +89,7 @@ class VehiclesController extends BaseController
     //
     public function update(Request $request)
     {
-        $validator = \Validator::make($request->all(), [
+        $validator = Validator::make(Vehicle::class, VehicleForm::class, $request->all(), [
             'model'         => 'required',
             'motor'         => 'required',
             'year'          => 'required',
@@ -118,6 +122,9 @@ class VehiclesController extends BaseController
         $u->save();
 
         //
+        $u->saveRelationships();
+
+        //
         $this->flash()->success('Veículo atualizado com sucesso!');
         return redirect()->route('bw.vehicles.index');
     }
@@ -127,6 +134,7 @@ class VehiclesController extends BaseController
     {
         // delete
         $u = Vehicle::find($id);
+        $u->deleteRelationships();
         $u->delete();
 
         // redirect
