@@ -7,13 +7,52 @@ return [
 
         //
         'Vehicles\Models\Vehicle' => [
-            'image'   => [ 'type' => 'Image'     ],
-            'galery'  => [ 'type' => 'ImageGroup'],
-            'brand'   => [ 'type' => 'Listing'   ],
-            'color'   => [ 'type' => 'Listing'   ],
-            'fuel'    => [ 'type' => 'Listing'   ],
-            'status'  => [ 'type' => 'Listing'   ],
-            'options' => [ 'type' => 'Tag'       ],
+
+            'image' => [
+                'type' => 'Image',
+                'panel' => 'Imagens',
+                'title' => 'Imagem',
+            ],
+
+            'galery' => [
+                'type' => 'ImageGroup',
+                'title' => 'Galeria de imagens',
+                'panel' => 'Galeria de imagens',
+            ],
+
+            'brand' => [
+                'type' => 'Listing',
+                'panel' => 'Mais informações',
+                'validator' => 'required|not_in:0',
+                'title' => 'Marca',
+            ],
+
+            'color' => [
+                'type' => 'Listing',
+                'panel' => 'Mais informações',
+                'validator' => 'required|not_in:0',
+                'title' => 'Cor',
+            ],
+
+            'fuel' => [
+                'type' => 'Listing',
+                'panel' => 'Mais informações',
+                'validator' => 'required|not_in:0',
+                'title' => 'Combustível',
+            ],
+
+            'status' => [
+                'type' => 'Listing',
+                'panel' => 'Mais informações',
+                'validator' => 'required|not_in:0',
+                'title' => 'Status',
+            ],
+
+            'options' => [
+                'type' => 'Tag',
+                'panel' => 'Mais informações',
+                'title' => 'Opcionais',
+            ],
         ],
     ],
 
