@@ -27,28 +27,24 @@ return [
                 'brand' => [
                     'type' => 'Listing',
                     'panel' => 'Mais informações',
-                    'validator' => 'required|not_in:0',
                     'title' => 'Marca',
                 ],
 
                 'color' => [
                     'type' => 'Listing',
                     'panel' => 'Mais informações',
-                    'validator' => 'required|not_in:0',
                     'title' => 'Cor',
                 ],
 
                 'fuel' => [
                     'type' => 'Listing',
                     'panel' => 'Mais informações',
-                    'validator' => 'required|not_in:0',
                     'title' => 'Combustível',
                 ],
 
                 'status' => [
                     'type' => 'Listing',
                     'panel' => 'Mais informações',
-                    'validator' => 'required|not_in:0',
                     'title' => 'Status',
                 ],
 
