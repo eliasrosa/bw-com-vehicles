@@ -3,55 +3,60 @@
 return [
 
     //
-    'magic-relationship' => [
+    'models' => [
 
         //
         'Vehicles\Models\Vehicle' => [
+            'route-index' => 'bw.vehicles.index',
+            'title' => 'Veículos',
 
-            'image' => [
-                'type' => 'Image',
-                'panel' => 'Imagens',
-                'title' => 'Imagem',
-            ],
+            'relationships' => [
 
-            'galery' => [
-                'type' => 'ImageGroup',
-                'title' => 'Galeria de imagens',
-                'panel' => 'Galeria de imagens',
-            ],
+                'image' => [
+                    'type' => 'Image',
+                    'panel' => 'Imagens',
+                    'title' => 'Imagem',
+                ],
 
-            'brand' => [
-                'type' => 'Listing',
-                'panel' => 'Mais informações',
-                'validator' => 'required|not_in:0',
-                'title' => 'Marca',
-            ],
+                'galery' => [
+                    'type' => 'ImageGroup',
+                    'title' => 'Galeria de imagens',
+                    'panel' => 'Galeria de imagens',
+                ],
 
-            'color' => [
-                'type' => 'Listing',
-                'panel' => 'Mais informações',
-                'validator' => 'required|not_in:0',
-                'title' => 'Cor',
-            ],
+                'brand' => [
+                    'type' => 'Listing',
+                    'panel' => 'Mais informações',
+                    'validator' => 'required|not_in:0',
+                    'title' => 'Marca',
+                ],
 
-            'fuel' => [
-                'type' => 'Listing',
-                'panel' => 'Mais informações',
-                'validator' => 'required|not_in:0',
-                'title' => 'Combustível',
-            ],
+                'color' => [
+                    'type' => 'Listing',
+                    'panel' => 'Mais informações',
+                    'validator' => 'required|not_in:0',
+                    'title' => 'Cor',
+                ],
 
-            'status' => [
-                'type' => 'Listing',
-                'panel' => 'Mais informações',
-                'validator' => 'required|not_in:0',
-                'title' => 'Status',
-            ],
+                'fuel' => [
+                    'type' => 'Listing',
+                    'panel' => 'Mais informações',
+                    'validator' => 'required|not_in:0',
+                    'title' => 'Combustível',
+                ],
 
-            'options' => [
-                'type' => 'Tag',
-                'panel' => 'Mais informações',
-                'title' => 'Opcionais',
+                'status' => [
+                    'type' => 'Listing',
+                    'panel' => 'Mais informações',
+                    'validator' => 'required|not_in:0',
+                    'title' => 'Status',
+                ],
+
+                'options' => [
+                    'type' => 'Tag',
+                    'panel' => 'Mais informações',
+                    'title' => 'Opcionais',
+                ],
             ],
         ],
     ],

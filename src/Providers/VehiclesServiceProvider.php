@@ -25,7 +25,7 @@ class VehiclesServiceProvider extends ServiceProvider
         \View::addNamespace('BW\Vehicles', __DIR__ . '/../../views');
 
         //
-        \BWAdmin::registerRelationships('vehicles.magic-relationship');
+        \BWAdmin::registerRelationships('vehicles.models');
 
         //
         \BWAdmin::registerMenu('vehicles.menu');

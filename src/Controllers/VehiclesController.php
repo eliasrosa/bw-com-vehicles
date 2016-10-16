@@ -14,9 +14,12 @@ class VehiclesController extends BaseController
     public function index(){
 
         $vehicles = Vehicle::all();
+        $relations_menu = \BWAdmin::createRelationshipsMenu(Vehicle::class);
 
+        //
         return view('BW\Vehicles::index')->with([
-            'vehicles' => $vehicles
+            'vehicles' => $vehicles,
+            'relations_menu' => $relations_menu,
         ]);
     }
 
@@ -48,7 +51,7 @@ class VehiclesController extends BaseController
         //
         if ($validator->fails()) {
 
-            $this->flash()->error('Alguns campos não foram preenchidos corretamente');
+            $this->flash()->error('Ops! Alguns campos não foram preenchidos corretamente');
 
             return back()
                 ->withErrors($validator)

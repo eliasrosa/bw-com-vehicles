@@ -4,7 +4,7 @@
 @section('header.title', 'Gerenciar veículos')
 
 @section('header.menu')
-    <li><a href="{{ route('bw.vehicles.create') }}">Adicionar veículo</a></li>
+    <li><a href="{{ route('bw.vehicles.create') }}"><span class="fa fa-plus"></span> Adicionar veículo</a></li>
 @endsection
 
 @section('content.index')
@@ -30,7 +30,7 @@
                     <td>{{ $i->price }}</td>
                     <td>
                         <span class="label label-default">
-                            {{ $i->status->name }}
+                            {{ $i->status->name or 'Não selecionado!' }}
                         </span>
                     </td>
                     <td>
