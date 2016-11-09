@@ -13,6 +13,7 @@
         <table class="datatable-simple">
             <thead>
                 <tr>
+                    <th>ID</th>
                     <th>Placa</th>
                     <th>Modelo</th>
                     <th>Ano</th>
@@ -24,7 +25,8 @@
             <tbody>
                 @foreach($vehicles as $i)
                 <tr>
-                    <td>{{ $i->license_plate }} (#{{ $i->id }})</td>
+                    <td>{{ $i->id }}</td>
+                    <td>{{ $i->license_plate }}</td>
                     <td>{{ $i->model }}</td>
                     <td>{{ $i->year }}</td>
                     <td>{{ $i->price }}</td>
