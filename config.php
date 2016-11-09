@@ -18,7 +18,7 @@ return [
                     'title' => 'Imagem',
                 ],
 
-                'brand' => [
+                'make' => [
                     'type' => 'Listing',
                     'panel' => 'Mais informações',
                     'title' => 'Marca',
