@@ -18,12 +18,6 @@ return [
                     'title' => 'Imagem',
                 ],
 
-                'galery' => [
-                    'type' => 'ImageGroup',
-                    'title' => 'Galeria de imagens',
-                    'panel' => 'Galeria de imagens',
-                ],
-
                 'brand' => [
                     'type' => 'Listing',
                     'panel' => 'Mais informações',
@@ -46,12 +40,6 @@ return [
                     'type' => 'Listing',
                     'panel' => 'Mais informações',
                     'title' => 'Status',
-                ],
-
-                'options' => [
-                    'type' => 'Tag',
-                    'panel' => 'Mais informações',
-                    'title' => 'Opcionais',
                 ],
             ],
         ],
