@@ -36,6 +36,12 @@ return [
                     'title' => 'Combustível',
                 ],
 
+                'transmission' => [
+                    'type' => 'Listing',
+                    'panel' => 'Mais informações',
+                    'title' => 'Câmbio',
+                ],
+
                 'status' => [
                     'type' => 'Listing',
                     'panel' => 'Mais informações',
