@@ -66,7 +66,7 @@ class VehiclesController extends BaseController
         $u->year = $request->get('year');
         $u->doors = $request->get('doors');
         $u->price = $request->get('price');
-        $u->license_plate = $request->get('license_plate');
+        $u->license_plate = strtoupper($request->get('license_plate'));
         $u->comments = $request->get('comments');
         $u->save();
 
@@ -120,7 +120,7 @@ class VehiclesController extends BaseController
         $u->year = $request->get('year');
         $u->doors = $request->get('doors');
         $u->price = $request->get('price');
-        $u->license_plate = $request->get('license_plate');
+        $u->license_plate = strtoupper($request->get('license_plate'));
         $u->comments = $request->get('comments');
         $u->save();
 
