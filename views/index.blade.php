@@ -31,9 +31,7 @@
                     <td>{{ $i->year }}</td>
                     <td>{{ $i->price }}</td>
                     <td>
-                        <span class="label label-default">
-                            {{ $i->status->name or 'Não selecionado!' }}
-                        </span>
+                        <span class="label label-default">{{ $i->status ? $i->status->name : '' }}</span>
                     </td>
                     <td>
                         <a href="{{ route('bw.vehicles.edit', $i->id) }}" class="btn btn-primary btn-xs"><span class="fa fa-edit"></span> Editar</a>
