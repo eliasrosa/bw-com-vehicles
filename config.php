@@ -18,6 +18,12 @@ return [
                     'title' => 'Imagem',
                 ],
 
+                'galery' => [
+                    'type' => 'ImageGallery',
+                    'panel' => 'Imagens',
+                    'title' => 'Galeria de imagens',
+                ],
+
                 'make' => [
                     'type' => 'Listing',
                     'panel' => 'Mais informações',
