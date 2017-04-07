@@ -13,7 +13,10 @@ class VehiclesController extends BaseController
     //
     public function index(){
 
-        $vehicles = Vehicle::all();
+        $vehicles = Vehicle::orderByRelationshipListingPosition('status')
+                        ->orderBy('model')
+                        ->get();
+        
         $relations_menu = \BWAdmin::createRelationshipsMenu(Vehicle::class);
 
         //
