@@ -28,7 +28,7 @@
                     <td>{{ $i->id }}</td>
                     <td>{{ $i->license_plate }}</td>
                     <td>{{ $i->model }}</td>
-                    <td>{{ $i->year }}</td>
+                    <td>{{ $i->year }} / {{ $i->year_model }}</td>
                     <td>{{ $i->price }}</td>
                     <td>
                         <span class="label label-default">{{ $i->status ? $i->status->name : '' }}</span>

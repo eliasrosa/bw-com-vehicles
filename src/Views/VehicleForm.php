@@ -26,15 +26,17 @@ class VehicleForm extends Form
     private function createForm()
     {
         $this->addPanel('Dados do veículo', function($panel){
-            $panel->addText('model', 'Modelo');
+            $panel->addText('model', 'Modelo')
+                  ->setWidth(6);  
+            $panel->addCurrency('price', 'Preço');
             $panel->addText('motor', 'Motor')
                   ->setWidth(6);
 
             $panel->addInteger('km', 'KM');
             $panel->addInteger('year', 'Ano');
+            $panel->addInteger('year_model', 'Ano do modelo');
             $panel->addInteger('doors', 'Número de portas');
             $panel->addLicensePlate('license_plate', 'Placa');
-            $panel->addCurrency('price', 'Preço');
 
             //
             $panel->addTextArea('comments', 'Informações adicionais')

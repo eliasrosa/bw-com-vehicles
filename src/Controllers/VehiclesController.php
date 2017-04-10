@@ -44,11 +44,12 @@ class VehiclesController extends BaseController
         $validator = Validator::make(Vehicle::class, VehicleForm::class, $request->all(), [
             'model'         => 'required',
             'motor'         => 'required',
-            'year'          => 'required',
+            'year'          => 'required|digits:4',
             'doors'         => 'required',
             'price'         => 'required',
             'license_plate' => 'required',
             'km'            => 'required',
+            'year_model'    => 'required|digits:4',
         ]);
 
         //
@@ -67,6 +68,7 @@ class VehiclesController extends BaseController
         $u->model = $request->get('model');
         $u->motor = $request->get('motor');
         $u->year = $request->get('year');
+        $u->year_model = $request->get('year_model');
         $u->doors = $request->get('doors');
         $u->price = str_replace(',', '.', str_replace('.', '', $request->get('price')));
         $u->license_plate = strtoupper($request->get('license_plate'));
@@ -98,11 +100,12 @@ class VehiclesController extends BaseController
         $validator = Validator::make(Vehicle::class, VehicleForm::class, $request->all(), [
             'model'         => 'required',
             'motor'         => 'required',
-            'year'          => 'required',
+            'year'          => 'required|digits:4',
             'doors'         => 'required',
             'price'         => 'required',
             'km'            => 'required',
             'license_plate' => 'required',
+            'year_model'    => 'required|digits:4',
         ]);
 
         //
@@ -121,6 +124,7 @@ class VehiclesController extends BaseController
         $u->model = $request->get('model');
         $u->motor = $request->get('motor');
         $u->year = $request->get('year');
+        $u->year_model = $request->get('year_model');
         $u->doors = $request->get('doors');
         $u->price = str_replace(',', '.', str_replace('.', '', $request->get('price')));
         $u->license_plate = strtoupper($request->get('license_plate'));
