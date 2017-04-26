@@ -18,7 +18,7 @@ return [
                     'title' => 'Imagem',
                 ],
 
-                'galery' => [
+                'gallery' => [
                     'type' => 'ImageGallery',
                     'panel' => 'Imagens',
                     'title' => 'Galeria de imagens',
@@ -34,6 +34,12 @@ return [
                     'type' => 'Listing',
                     'panel' => 'Mais informações',
                     'title' => 'Cor',
+                ],                
+
+                'destaque' => [
+                    'type' => 'Listing',
+                    'panel' => 'Mais informações',
+                    'title' => 'Destaque',
                 ],
 
                 'fuel' => [
@@ -52,6 +58,12 @@ return [
                     'type' => 'Listing',
                     'panel' => 'Mais informações',
                     'title' => 'Status',
+                ],
+
+                'features' => [
+                    'type' => 'Tag',
+                    'panel' => 'Opcionais',
+                    'title' => 'Opcionais',
                 ],
             ],
         ],
