@@ -29,7 +29,13 @@
                     <td>{{ $i->license_plate }}</td>
                     <td>{{ $i->model }}</td>
                     <td>{{ $i->year }} / {{ $i->year_model }}</td>
-                    <td>{{ $i->price }}</td>
+                    <td>
+                        @if($i->price > 0)
+                            R$ {{ number_format($i->price, 2, ',', '.') }}
+                        @else
+                            Sob Consulta
+                        @endif
+                    </td>
                     <td>
                         <span class="label label-default">{{ $i->status ? $i->status->name : '' }}</span>
                     </td>
