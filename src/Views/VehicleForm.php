@@ -39,8 +39,7 @@ class VehicleForm extends Form
             $panel->addLicensePlate('license_plate', 'Placa');
 
             //
-            $panel->addTextArea('comments', 'Informações adicionais')
-                  ->addAttribute('style', 'height: 118px;');
+            $panel->addTextAreaEditor('comments', 'Informações adicionais');
         });
     }
 }
